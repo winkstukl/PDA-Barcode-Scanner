@@ -1,0 +1,17 @@
+mkdir -p /mnt/sdcard
+mount /dev/mmcblk1p1 /mnt/sdcard
+
+mkdir -p /home/root/0330lib
+cp -av /mnt/sdcard/0330BARcode /home/root/
+cp -av /mnt/sdcard/libzbar.so.0.3.0 /home/root/0330lib/
+chmod +x /home/root/0330BARcode
+
+cd /home/root/0330lib
+ln -sf libzbar.so.0.3.0 libzbar.so.0
+ln -sf libzbar.so.0 libzbar.so
+
+export LD_LIBRARY_PATH=/home/root/0330lib:$LD_LIBRARY_PATH
+ldd /home/root/0330BARcode | grep zbar
+
+cd /home/root
+./0330BARcode

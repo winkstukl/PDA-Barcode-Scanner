@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# 环境变量与密钥（绝不提交）
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# 数据库（运行数据）
+*.db
+*.sqlite3
+
+# Qt 编译产物
+QT程序/build-*/
+build/
+Debug/
+Release/
+*.o
+*.obj
+
+# ESP32 编译产物
+ESP32程序/.pio/
+ESP32程序/build/
+
+# 生成的条码图片
+python服务/barcode_image_generator/output/
+
+# 系统与编辑器
+Thumbs.db
+.DS_Store
+.vscode/
+.idea/
